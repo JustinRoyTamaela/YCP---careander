@@ -4,4 +4,5 @@ export class Reminder {
     task: string;
     time: string;
     info: string;
+    completed: string;
   }

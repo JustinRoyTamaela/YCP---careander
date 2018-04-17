@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Reminder } from '../reminder';
 // import { REMINDERS } from '../mock-reminders';
 import { ReminderService } from '../reminder.service';
@@ -21,41 +22,34 @@ export class RemindersComponent implements OnInit {
 
   selectedReminder: Reminder;
 
-  
-
-
-//   completeTask(event, index) {
-    
-//     if(event.target.checked){ 
-//       this.taskCompleted = true;       
-//     }
-//     else {
-//       this.taskCompleted = false;
-//     }
-//  }
-
-  // completeTask(index) {
-  //   this.taskCompleted = false;
-  // }
-
-  deleteTask(index) {
-    this.reminders.splice(index, 1);
-    }
-
-
   constructor(private reminderService: ReminderService) {
     //  this.newReminder = '';
     //  this.reminders = REMINDERS;
    }
 
-  //  addReminder(event) {
-  //   this.reminderObj = {
-  //     newReminder: this.newReminder,
-  //     completed: false
-  //   }
-  //   this.reminders.push(this.reminderObj);
-  //   this.newReminder = '';
-  //   event.preventDefault();
+
+   getAllReminders() {
+    this.reminderService.getReminders().subscribe(
+      reminders => {
+        this.reminders = reminders;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  
+
+  delete(reminder: Reminder): void {
+    this.reminders = this.reminders.filter(h => h !== reminder);
+    this.reminderService.deleteReminder(reminder).subscribe();
+  }
+
+  // delete(reminder) {
+  //   this.reminderService.deleteReminder(reminder).subscribe(
+  //     () => this.getAllReminders()
+  //   );
   // }
 
    
@@ -63,18 +57,34 @@ export class RemindersComponent implements OnInit {
     this.getReminders();
   }
 
-  // onSelect(event, reminder: Reminder): void {
-  //   if(event.target.checked){
-  //   this.completedReminder = reminder;
-  //   }
-  //   else {
-  //   this.completedReminder = '';
-  //   }
-  // }
-
   getReminders(): void {
     this.reminderService.getReminders()
      .subscribe(reminders => this.reminders = reminders);
   }
+
+  /** Function to update reminder completion */
+  // save(): void {
+  //   this.reminderService.updateReminder(this.reminder)
+  //     .subscribe();
+  // }
+
+
+
+
+    
+  /** Function to add a new reminder */
   
+  add(client: string, task: string, time: string, info: string): void {
+    client = client.trim();
+    task = task.trim();
+    time = time.trim();
+    info = info.trim();
+    // completed = completed.trim();
+    if (!client) { return; }
+    this.reminderService.addReminder({ client, task, time, info } as Reminder)
+      .subscribe(reminder => {
+        this.reminders.push(reminder);
+      });
+  }
+
 }
