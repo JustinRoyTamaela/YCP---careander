@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DagtakenComponent } from './dagtaken.component';
+import { DienstenComponent } from './diensten.component';
 
-describe('DagtakenComponent', () => {
-  let component: DagtakenComponent;
-  let fixture: ComponentFixture<DagtakenComponent>;
+describe('DienstenComponent', () => {
+  let component: DienstenComponent;
+  let fixture: ComponentFixture<DienstenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DagtakenComponent ]
+      declarations: [ DienstenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DagtakenComponent);
+    fixture = TestBed.createComponent(DienstenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
