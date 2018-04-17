@@ -33,7 +33,7 @@ export class ReminderService {
   //     );
   // }
 
-  getReminders(): Observable<Reminder[]>  {
+  getReminders(): Observable<any>  {
     return this.http.get('http://localhost:3000/reminders');
       
   }
@@ -66,17 +66,18 @@ export class ReminderService {
 /** POST: add a new hero to the server */
 // addReminder (reminder: Reminder): Observable<Reminder> {
 //   return this.http.post<Reminder>(this.remindersUrl, reminder, httpOptions).pipe(
-//     tap((reminder: Reminder) => this.log(`added reminder w/ id=${reminder.id}`)),ddedewdewdfefweffggfgfgg
+//     tap((reminder: Reminder) => this.log(`added reminder w/ id=${reminder.id}`)),
 //     catchError(this.handleError<Reminder>('addReminder'))
 //   );
 // }
 
-addReminder(reminder: Reminder): Observable<Reminder> {
+addReminder(reminder: Reminder): Observable<any> {
   return this.http.post('http://localhost:3000/reminder', reminder);
 }
 
 deleteReminder(id) {
-  return this.http.delete('http://localhost:3000/reminder/' + id);
+  return this.http.delete('http://localhost:3000/delReminder/' + id);
+  
     
 
 }
@@ -91,16 +92,7 @@ deleteReminder(id) {
 // }
 
 
-/** DELETE: delete the hero from the server */
-// deleteReminder (reminder: Reminder | number): Observable<Reminder> {
-//   const id = typeof reminder === 'number' ? reminder : reminder.id;
-//   const url = `${this.remindersUrl}/${id}`;
 
-//   return this.http.delete<Reminder>(url, httpOptions).pipe(
-//     tap(_ => this.log(`deleted reminder id=${id}`)),
-//     catchError(this.handleError<Reminder>('deleteReminder'))
-//   );
-// }
 
 
     /**

@@ -4,7 +4,7 @@
         <li *ngFor="let reminder of reminders; let i=index" id="listItem">
           <div class="card-view col-md-6 col-md-offset-1">
              <div class="card" 
-              [ngClass]="{checked : reminder.completed == true}">    
+              [ngClass]="{checked : reminder.completed }">    
                 <h5 class="card-header col-md-12">
                   <div class="row">
                     <div class="col-md-6">{{reminder.id}} - Client: {{reminder.client}}</div>
@@ -23,7 +23,7 @@
                   </h5>
                   
                   <p class="card-text"><i>{{reminder.client}}</i> {{reminder.info}} {{reminder.time}}</p>
-                  <a href="#" class="btn btn-primary" (click)="delete(reminder)">Remove Reminder</a>
+                  <a href="#" class="btn btn-primary" (click)="delete(reminder.id)">Remove Reminder</a>
                   
                     <!-- <input [(ngModel)]="reminder.completed" placeholder="name">
                     <button (click)="save()">save</button> -->
@@ -45,7 +45,7 @@
             <div class="card">
                 <h5 class="card-header col-md-12">
                  <div class="row">
-                   <div class="col-md-6">ID - <label>Client:
+                   <div class="col-md-6">ID - <input #reminderID placeholder="6"/><label>Client:
                       <input #reminderClient placeholder="Jan"/>
                     </label></div>
                    <div class="col-md-6 col-md-offset-6" id="reminderTime"><input #reminderTime placeholder="07:30 PM"/></div>   
@@ -65,10 +65,12 @@
                  
                  <p class="card-text"><i>Jan</i> <input #reminderInfo placeholder="moet sporten om" /> 07:30 PM</p>
                  <a href="#" class="btn btn-primary" (click)="add(
+                    reminderID.value,
                     reminderClient.value,  
                     reminderTask.value, 
                     reminderTime.value, 
-                    reminderInfo.value
+                    reminderInfo.value,
+                    'false'
                    
                     ); 
                       reminderClient.value=''; 
