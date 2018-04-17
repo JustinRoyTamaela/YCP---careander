@@ -10,10 +10,11 @@
   						<li *ngFor="let dagtaak of dagtaken"
     					[class.selected]="dagtaak === selectedDagtaak"
     					(click)="onSelect(dagtaak)" class="takenlijst" >
-    						<span class="badge">{{dagtaak.titel | uppercase}}</span>
+    						<span class="badge">{{dagtaak.t3itel | uppercase}}</span>
   						</li>
 
   						<!-- Hier moeten nog 2 li's komen voor de middag en avond taken -->
+  						<!-- Dit is een verandering voor Git -->
 
 
 					</ul>
