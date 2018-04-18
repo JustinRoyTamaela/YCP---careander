@@ -1,0 +1,12 @@
+.dagtaken {
+	margin-top: 1.5em;
+}
+
+.dagtaken > li {
+	margin-bottom: 2em;
+	list-style-type: none;
+}
+
+hr {
+	width:100%; height:0.5px; background: #000
+}

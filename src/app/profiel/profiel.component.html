@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="col-md-6">
+		<div class="card">
+  			<img class="card-img-top" src="./assets/kerstman_profiel.png" alt="Card image cap">
+  			
+        <div class="card-body">
+    			<h5 class="card-title">{{ client.name }}</h5>
+  			</div>
+  			
+        <ul class="list-group list-group-flush clients">
+    			<li class="list-group-item"> {{client.kenmerk1}} </li>
+    			<li class="list-group-item">{{client.kenmerk2}}</li>
+    			<li class="list-group-item">{{client.kenmerk3}}</li>
+  			</ul>
+
+		</div>
+	</div>
+</div>
+
+<!--
+
+*ngFor="let hero of heroes" (click)="onSelect(client)" 
+
+-->

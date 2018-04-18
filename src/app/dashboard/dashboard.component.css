@@ -1,0 +1,31 @@
+.container {
+	padding: 15px;
+	background-color: #4d2971;
+}
+
+
+.dashboard-item {
+	margin-bottom: 30px;
+}
+
+.dashboard {
+	height: 15em;
+	width: auto;
+}
+
+.card-link {
+	position: absolute;
+    bottom: 20px;
+}
+
+.datum {
+
+}
+.datum, h2 {
+	font-size: 2em;
+	color: #fff;
+}
+.datum, p {
+	font-size: 0.8em;
+	color: #fff;
+}
