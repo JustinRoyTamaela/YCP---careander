@@ -1,9 +1,53 @@
 <div class="container">
 	<div class="row">
-		<h2>Clienten</h2>
+		<div class="col-md-6">
+			<h2>Client gegevens</h2>
+			<div class="card">
+				<div class="card-body">
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><input #clientId placeholder="voer iets in"></li>
+						<li class="list-group-item"><input #clientName placeholder="voer iets in"></li>
+						<li class="list-group-item"><input #clientLeeftijd placeholder="voer iets in"></li>
+						<li class="list-group-item"><input #clientImgUrl placeholder="voer iets in"></li>
+
+  					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h2>Client kenmerken</h2>
+			<div class="card">
+				<div class="card-body">
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><input #clientKenmerk1 placeholder="voer iets in"></li>
+						<li class="list-group-item"><input #clientKenmerk2 placeholder="voer iets in"></li>
+						<li class="list-group-item"><input #clientKenmerk3 placeholder="voer iets in"></li>
+  					</ul>
+  					<a href="#" class="btn btn-primary voegtoe" (click)="addClient(
+                    clientId.value,
+                    clientName.value,  
+                    clientLeeftijd.value, 
+                    clientImgUrl.value, 
+                    clientKenmerk1.value,
+                    clientKenmerk2.value,
+                    clientKenmerk3.value
+                    ); 
+
+                    clientId.value='';
+                    clientName.value='';  
+                    clientLeeftijd.value=''; 
+                    clientImgUrl.value=''; 
+                    clientKenmerk1.value='';
+                    clientKenmerk2.value='';
+                    clientKenmerk3.value=''"> 
+                	Voeg client toe</a>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-6">
+		<h2>Selecteer een client</h2>	
 			<div class="card">
 				<div class="card-body">
 					<ul class="clienten">
@@ -11,12 +55,15 @@
     					[class.selected]="client === selectedClient"
     					(click)="onSelect(client)" class="clientenlijst" >
     						<span class="badge">{{client.id}}</span> {{client.name}}
+    						<a href="#" class="btn btn-danger float-right"
+    						(click)="deleteClient(client.id)"
+    						>X</a>
   						</li>
 					</ul>
 				</div>	
 			</div>
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<div *ngIf="selectedClient" class="card">
 				<div class="card-body">
 					<h5 class="card-title">{{ selectedClient.name }}</h5>

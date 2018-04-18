@@ -21,8 +21,16 @@ export class ClientenService {
 
   	getClienten(): Observable<any>  {
     return this.http.get('http://localhost:3000/clienten'); //onthoud de path naar 3000/ dit moet overeenkomen met je app.get in de node server
-      
   	}
+
+  	addClient(client: Client): Observable<any> {
+  	return this.http.post('http://localhost:3000/clientToevoegen', client);
+	}
+
+	deleteClient(id) {
+  	return this.http.delete('http://localhost:3000/delClient/' + id);
+	}
+
 
 
 

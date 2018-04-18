@@ -13,7 +13,7 @@ function getConnection() {
   var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'mysql',
+    password: '',
     database: 'careander'
   });
   return connection;
@@ -47,6 +47,27 @@ app.post('/reminder', function (req, res) {
   connection.end();
 });
 
+
+/* LUISTEREN -- client toevoegen posten in database */
+app.post('/clientToevoegen', function (req, res) {
+  var connection = getConnection();
+  connection.connect();
+  var newClient = {
+    id: req.body.id,
+    name: req.body.name,
+    leeftijd: req.body.leeftijd,
+    imgurl: req.body.imgurl,
+    kenmerk1: req.body.kenmerk1,
+    kenmerk2: req.body.kenmerk2,
+    kenmerk3: req.body.kenmerk3
+  };
+  var query = connection.query('INSERT INTO clienten SET ?', newClient, function (err, result) {
+    console.log("added " +  newClient);
+    res.status(200).end();
+  });
+  connection.end();
+});
+
 /*LUISTEREN - Halen uit Database */
 
 app.get('/reminders', function(req, res) {
@@ -75,3 +96,42 @@ app.delete('/delReminder/:id', function(req, res) {
   });
   connection.end();
 });
+
+
+
+/* LUISTEREN - luisteren naar de clienten table in de database. */
+
+app.get('/clienten', function(req, res) {
+  console.log("in get clienten");
+  var connection = getConnection();
+  connection.connect();
+  connection.query('SELECT * from clienten order by id asc', function(err, rows, fields) {
+    if (!err) {
+      console.log(rows);
+      res.send(JSON.stringify(rows));
+    }
+    else {
+      console.log('Error while performing Query.');
+    }
+  });
+  connection.end();
+});
+
+
+app.delete('/delClient/:id', function(req, res) {
+  var id = req.params.id;
+  var connection = getConnection();
+  connection.connect();
+  connection.query('DELETE from clienten where id = ?', id,  function(err, rows, fields) {
+    console.log('deleted ' + id);
+    res.status(200).end();
+  });
+  connection.end();
+});
+
+
+
+
+
+
+
