@@ -1,0 +1,40 @@
+.clientenlijst {
+	list-style-type: none;
+	background-color: #3232;
+	margin: 10px 0px 10px 0px;
+	padding: 0;
+}	
+
+.clienten {
+	padding-left: 0;
+}
+
+.badge {
+	border-radius: 0;
+	background-color: #333;
+	padding: 20px;
+	margin-right: 10px;
+	color: #fff;
+}
+
+.list-group-item {
+	background-color: #3232;
+}
+
+.card {
+	border: 0;
+}
+.card-body {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+h2	{
+	margin-left: 20px;
+}
+
+.card-img-top {
+	height: 400px;
+	width: auto;
+	
+}

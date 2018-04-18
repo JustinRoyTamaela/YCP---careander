@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="row">
+		<h2>Clienten</h2>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-body">
+					<ul class="clienten">
+  						<li *ngFor="let client of clients"
+    					[class.selected]="client === selectedClient"
+    					(click)="onSelect(client)" class="clientenlijst" >
+    						<span class="badge">{{client.id}}</span> {{client.name}}
+  						</li>
+					</ul>
+				</div>	
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div *ngIf="selectedClient" class="card">
+				<div class="card-body">
+					<h5 class="card-title">{{ selectedClient.name }}</h5>
+					<img src="{{selectedClient.imgurl}}" class="card-img-top">
+					<ul class="list-group list-group-flush">
+    					<li class="list-group-item"> {{selectedClient.kenmerk1}} </li>
+    					<li class="list-group-item">{{selectedClient.kenmerk2}}</li>
+    					<li class="list-group-item">{{selectedClient.kenmerk3}}</li>
+  					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--   <div>
+    <label>name:
+      <input [(ngModel)]="selectedClient.name" placeholder="name">
+    </label>
+  </div> -->
+
+
+
+
+
+
+
+
