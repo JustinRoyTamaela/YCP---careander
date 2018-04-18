@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "ycp",
+=======
+  "name": "reminders-view",
+>>>>>>> 5187ad02d36c302f2d1b5a00974ee63b7c22e7a4
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -21,10 +25,15 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+<<<<<<< HEAD
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "jquery": "^3.3.1",
     "npm": "^5.8.0",
+=======
+    "bootstrap": "^4.1.0",
+    "core-js": "^2.4.1",
+>>>>>>> 5187ad02d36c302f2d1b5a00974ee63b7c22e7a4
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },

@@ -1,0 +1,52 @@
+
+<div class="container">
+
+    <div>
+        <form (submit)="addReminder($event)">
+        <input [(ngModel)]="newReminder" (keyup.enter)="newReminder=''" class="textfield" name="newReminder">
+          <button  type="submit" [disabled]="newReminder===''">Add </button>
+        </form>
+    </div>
+
+
+
+    <ul class="reminders">
+        <li *ngFor="let reminder of reminders; let i=index" id="listItem">
+          <div class="card-view col-md-6 col-md-offset-1">
+             <div class="card" 
+              [ngClass]="{checked : reminder === completedReminder}"
+              >           <!--  //  (click)="onSelect(reminder)"[ngClass]="{'checked': taskCompleted}" -->
+                <h5 class="card-header col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">{{reminder.id}} - Client: {{reminder.client}}</div>
+                    <div class="col-md-6 col-md-offset-6" id="reminderTime">{{reminder.time}}</div>   
+                  </div> 
+                </h5>
+                
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <div class="row">
+                      <div class="col-md-6">Task: {{reminder.task}}</div>
+                      <div class="col-md-6 col-md-offset-6" id="checkDone"> Complete: <input type="checkbox" (change)="onSelect($event, reminder)"> </div>
+                      
+
+                    </div>
+                    
+                  </h5>
+                  
+                  <p class="card-text"><i>{{reminder.client}}</i> {{reminder.info}} {{reminder.time}}</p>
+                  <a href="#" class="btn btn-primary" (click)="deleteTask(i)">Remove Task</a>
+                  
+                </div>
+              </div>
+          </div>
+
+        </li>
+      </ul>
+
+
+     
+
+
+</div>
+

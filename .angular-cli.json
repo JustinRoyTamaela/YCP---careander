@@ -1,7 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
+<<<<<<< HEAD
     "name": "ycp"
+=======
+    "name": "reminders-view"
+>>>>>>> 5187ad02d36c302f2d1b5a00974ee63b7c22e7a4
   },
   "apps": [
     {
@@ -19,7 +23,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+<<<<<<< HEAD
           "styles.css"
+=======
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "styles.css"
+>>>>>>> 5187ad02d36c302f2d1b5a00974ee63b7c22e7a4
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
