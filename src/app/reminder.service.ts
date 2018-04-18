@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 import { Reminder } from './reminder';
-// import { REMINDERS } from './mock-reminders';
+
 
 
 const httpOptions = {
@@ -20,8 +20,7 @@ const httpOptions = {
 @Injectable()
 export class ReminderService {
 
-  // private remindersUrl = 'api/reminders';  // URL to web api
-  // private remindersUrl = 'http://localhost:3000/todos';  // URL to Node
+
 
   /** GET reminders from the server */
   // getReminders (): Observable<Reminder[]> {
@@ -49,12 +48,7 @@ export class ReminderService {
   //   );
   // }
 
-  // getReminders(): Observable<Reminder[]>  {
-  //   return this.http.get('http://localhost:3000/todos')
-  //   .pipe(
-  //     tap(reminders => this.log('fetched reminders')),
-  //     catchError(this.handleError('getReminders', []))
-  //   );
+ 
     
   
 
@@ -77,10 +71,9 @@ addReminder(reminder: Reminder): Observable<any> {
 
 deleteReminder(id) {
   return this.http.delete('http://localhost:3000/delReminder/' + id);
-  
-    
-
 }
+
+
 
 
 /** PUT Edit Reminder (used for checking completion) complete() */

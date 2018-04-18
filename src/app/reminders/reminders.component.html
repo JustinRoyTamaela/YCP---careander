@@ -4,7 +4,7 @@
         <li *ngFor="let reminder of reminders; let i=index" id="listItem">
           <div class="card-view col-md-6 col-md-offset-1">
              <div class="card" 
-              [ngClass]="{checked : reminder.completed }">    
+              [ngClass]="{'checked' : reminder.completed == 'true' }">    
                 <h5 class="card-header col-md-12">
                   <div class="row">
                     <div class="col-md-6">{{reminder.id}} - Client: {{reminder.client}}</div>
@@ -16,7 +16,7 @@
                   <h5 class="card-title">
                     <div class="row">
                       <div class="col-md-6">Task: {{reminder.task}}</div>
-                      <div class="col-md-6 col-md-offset-6" id="checkDone"> Complete: <input type="checkbox" [(ngModel)]="reminder.completed"> </div>                                        
+                      <!-- <div class="col-md-6 col-md-offset-6" id="checkDone"> Complete: <input type="checkbox" [(ngModel)]="reminder.completed"> </div>                                         -->
 
                     </div>
                                         
@@ -25,8 +25,8 @@
                   <p class="card-text"><i>{{reminder.client}}</i> {{reminder.info}} {{reminder.time}}</p>
                   <a href="#" class="btn btn-primary" (click)="delete(reminder.id)">Remove Reminder</a>
                   
-                    <!-- <input [(ngModel)]="reminder.completed" placeholder="name">
-                    <button (click)="save()">save</button> -->
+                    <!-- <input [(ngModel)]="reminder.completed" placeholder="name"> -->
+                    <!-- <button (click)="markCompleted(reminder.id, reminder.completed)">Mark as COMPLETED</button> -->
 
               
       
