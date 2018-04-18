@@ -4,6 +4,7 @@
 
 .dagtaken > li {
 	margin-bottom: 2em;
+	list-style-type: none;
 }
 
 hr {

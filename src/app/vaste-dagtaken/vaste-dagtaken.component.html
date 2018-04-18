@@ -29,30 +29,51 @@
         <div class="col-md-6 offset-md-3">
           <ul class="dagtaken">
               <li *ngFor="let dagdienst of Dagdienst">
-              <h5>{{dagdienst.titel}}</h5>tijd: <span>{{dagdienst.tijd}}</span>  <br>
-              {{dagdienst.omschrijving}}
-              <hr>
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ dagdienst.titel }}</h5>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">tijd: {{ dagdienst.tijd }} </li>
+                      <li class="list-group-item"> {{ dagdienst.omschrijving }} </li>
+                    </ul>
+                  </div>
+                </div>
             </li>
           </ul>
-
         </div>
       </div>
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="col-md-6 offset-md-3">
-          <li *ngFor="let middagdienst of Middagdienst">
-              <h5>{{middagdienst.titel}}</h5>tijd: <span>{{middagdienst.tijd}}</span>  <br>
-              {{middagdienst.omschrijving}}
-              <hr>
+          <ul class="dagtaken">
+            <li *ngFor="let middagdienst of Middagdienst">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{ middagdienst.titel }}</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">tijd: {{ middagdienst.tijd }} </li>
+                    <li class="list-group-item"> {{ middagdienst.omschrijving }} </li>
+                  </ul>
+                </div>
+              </div>
             </li>
+          </ul>
         </div>
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <div class="col-md-6 offset-md-3">
-          <li *ngFor="let avonddienst of Avonddienst">
-              <h5>{{avonddienst.titel}}</h5>tijd: <span>{{avonddienst.tijd}}</span>  <br>
-              {{avonddienst.omschrijving}}
-              <hr>
-            </li>      
+          <ul class="dagtaken">
+            <li *ngFor="let avonddienst of Avonddienst">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{ avonddienst.titel }}</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">tijd: {{ avonddienst.tijd }} </li>
+                    <li class="list-group-item"> {{ avonddienst.omschrijving }} </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>     
         </div>
       </div>
     </div>
