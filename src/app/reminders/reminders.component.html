@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
@@ -9,53 +10,95 @@
 </div>
 
 <div class="container">
+=======
+<div class="row">
+  <div class="col-md-6">
+    <h2>To do</h2>
+  </div>
+</div>
+>>>>>>> 99717dffd6c9f899c064c7cb1494d856b527348f
 
+
+<div class="row">
+  <div class="col-md-5">
+    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    nieuwe to do: 
+    </a>
+
+    <div class="collapse" id="collapseExample">
+        <div class="card-body">
+          ID: <br>
+          <input #reminderID placeholder="6"/> <br>
+          
+          Client: <br>
+          <input #reminderClient placeholder="Jan"/> <br>
+         
+          Tijd: <br>
+          <input #reminderTime placeholder="07:30 PM"/> <br>
+         
+          Taak omschrijving: <br>
+          <input #reminderTask placeholder="Sporten" /> <br>
+          
+          samenvatting: <br>
+          <i>Jan</i><input #reminderInfo placeholder="moet sporten om" /> 07:30 PM <br>
+
+          <a href="#" class="btn btn-primary" (click)="add(
+          reminderID.value,
+          reminderClient.value,  
+          reminderTask.value, 
+          reminderTime.value, 
+          reminderInfo.value,
+          'false'       
+          ); 
+          reminderClient.value=''; 
+          reminderTask.value=''; 
+          reminderTime.value=''; 
+          reminderInfo.value=''">
+          Voeg taak toe</a>
+        </div>
+    </div>
+  </div>
+  <!-- Lijst met reminders -->
+  <div class="col-md-7">
     <ul class="reminders">
-        <li *ngFor="let reminder of reminders; let i=index" id="listItem">
-          <div class="card-view col-md-6 col-md-offset-1">
-             <div class="card" 
-              [ngClass]="{'checked' : reminder.completed == 'true' }">    
-                <h5 class="card-header col-md-12">
-                  <div class="row">
-                    <div class="col-md-6">{{reminder.id}} - Client: {{reminder.client}}</div>
-                    <div class="col-md-6 col-md-offset-6" id="reminderTime">{{reminder.time}}</div>   
-                  </div> 
-                </h5>
-                
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <div class="row">
-                      <div class="col-md-6">Task: {{reminder.task}}</div>
-                      <!-- <div class="col-md-6 col-md-offset-6" id="checkDone"> Complete: <input type="checkbox" [(ngModel)]="reminder.completed"> </div>                                         -->
-
-                    </div>
-                                        
-                  </h5>
-                  
-                  <p class="card-text"><i>{{reminder.client}}</i> {{reminder.info}} {{reminder.time}}</p>
-                  <a href="#" class="btn btn-primary" (click)="delete(reminder.id)">Remove Reminder</a>
-                  
-                    <!-- <input [(ngModel)]="reminder.completed" placeholder="name"> -->
-                    <!-- <button (click)="markCompleted(reminder.id, reminder.completed)">Mark as COMPLETED</button> -->
-
-              
-      
-                  
-                  
-                </div>
-              </div>
+      <li *ngFor="let reminder of reminders; let i=index" id="listItem">
+        <div class="card" [ngClass]="{'checked' : reminder.completed == 'true' }">
+          <div class="card-header">
+            <h2>{{reminder.id}}. Client: {{reminder.client}}</h2>
+            <span>{{reminder.time}} uur</span>
           </div>
+          <div class="card-body">
+            <h5 class="card-title">To do: {{reminder.task}}</h5>
+            <!-- <div class="col-md-6 col-md-offset-6" id="checkDone"> Complete: <input type="checkbox" [(ngModel)]="reminder.completed"> </div> -->
+            <p class="card-text"><i>{{reminder.client}}</i> {{reminder.info}} {{reminder.time}}</p>
+            <a href="#" class="btn btn-primary" (click)="delete(reminder.id)">Remove Reminder</a>
+            <!--
+              <input [(ngModel)]="reminder.completed" placeholder="name">
+              <button (click)="markCompleted(reminder.id, reminder.completed)">Mark as COMPLETED</button>
+            -->   
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-        </li>
-      </ul>  
 
+</div>
+
+
+
+<div class="row">
+
+
+</div>  
 <!--Add New Reminders-->
 
-          <div class="card-view col-md-12 col-md-offset-1">
+
+<!--           <div class="card-view col-md-12 col-md-offset-1">
             <div class="card">
                 <h5 class="card-header col-md-12">
                  <div class="row">
-                   <div class="col-md-6">ID - <input #reminderID placeholder="6"/><label>Client:
+                   <div class="col-md-6">ID <input #reminderID placeholder="6"/><label>Client:
                       <input #reminderClient placeholder="Jan"/>
                     </label></div>
                    <div class="col-md-6 col-md-offset-6" id="reminderTime"><input #reminderTime placeholder="07:30 PM"/></div>   
@@ -66,9 +109,6 @@
                  <h5 class="card-title">
                    <div class="row">
                      <div class="col-md-6">Task: <input #reminderTask placeholder="Sporten" /></div>
-                     
-                     
-
                    </div>
                    
                  </h5>
@@ -91,7 +131,6 @@
                  
                </div>
              </div>
-         </div>
+         </div> -->
 
-</div>
 
