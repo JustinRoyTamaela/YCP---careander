@@ -1,20 +1,25 @@
-<div class="navbar navbar-default">
+<!-- <div class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a href="../" class="navbar-brand">Diensten</a>
+    
+      <a routerLink="/clienten" class="navbar-brand">Clienten</a>
+      <a routerLink="/taken" class="navbar-brand">Taken</a>
     </div>
   </div>
-</div>
-
+</div> -->
 
 <div class="container">
-	<app-reminders></app-reminders> 
-<!--
-	<app-clienten-bestand></app-clienten-bestand> 
-	<app-vaste-dagtaken></app-vaste-dagtaken>
-	<app-reminders></app-reminders> 
-	<app-vaste-dagtaken></app-vaste-dagtaken>
--->
+	<!-- <app-vaste-dagtaken></app-vaste-dagtaken> -->
+  
+  <router-outlet></router-outlet>
+  <!-- <app-clienten-bestand></app-clienten-bestand>
+  <app-reminders></app-reminders> -->
+
+	 
+<!--<app-vaste-dagtaken></app-vaste-dagtaken>
+	<app-reminders></app-reminders> -->
+	<!-- <app-vaste-dagtaken></app-vaste-dagtaken>
+  <app-reminders></app-reminders> -->
 
 </div>
 

@@ -1,4 +1,14 @@
-<div class="container">
+<div class="navbar navbar-default">
+	<div class="container">
+	  <div class="navbar-header">
+		<a routerLink="/dashboard" class="navbar-brand">Dashboard</a>
+		<a routerLink="/clienten" class="navbar-brand">Clienten</a>
+		<a routerLink="/taken" class="navbar-brand">Taken</a>
+	  </div>
+	</div>
+  </div>
+  
+  <div class="container">
 	<div class="row">
 		<div class="col-md-6">
 			<h2>Client gegevens</h2>
@@ -53,7 +63,7 @@
 					<ul class="clienten">
   						<li *ngFor="let client of clients"
     					[class.selected]="client === selectedClient"
-    					(click)="onSelect(client)" class="clientenlijst" >
+    					(click)="onSelect(client)"  class="clientenlijst" >
     						<span class="badge">{{client.id}}</span> {{client.name}}
     						<a href="#" class="btn btn-danger float-right"
     						(click)="deleteClient(client.id)"
@@ -63,14 +73,14 @@
 				</div>	
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<div *ngIf="selectedClient" class="card">
 				<div class="card-body">
 					<h5 class="card-title">{{ selectedClient.name }}</h5>
 					<img src="{{selectedClient.imgurl}}" class="card-img-top">
 					<ul class="list-group list-group-flush">
-    					<li class="list-group-item">Leeftijd: {{selectedClient.leeftijd}} </li>
-    					<li class="list-group-item">Kenmerk: {{selectedClient.kenmerk1}} </li>
+						<li class="list-group-item"> {{selectedClient.leeftijd}} </li>
+    					<li class="list-group-item"> {{selectedClient.kenmerk1}} </li>
     					<li class="list-group-item">{{selectedClient.kenmerk2}}</li>
     					<li class="list-group-item">{{selectedClient.kenmerk3}}</li>
   					</ul>
@@ -79,6 +89,8 @@
 		</div>
 	</div>
 </div>
+
+<!-- <app-reminders #reminder></app-reminders>  -->
 
 
 <!--   <div>

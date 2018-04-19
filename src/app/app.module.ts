@@ -14,6 +14,7 @@ import { ReminderService } from './reminder.service';
 import { ClientenService } from './clienten.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
+import { AppRoutingModule } from './/app-routing.module';
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
 
@@ -30,7 +31,8 @@ import { MessageService } from './message.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    HttpClientModule  
+    HttpClientModule,
+    AppRoutingModule    
   ],
   providers: [ReminderService, ClientenService, MessageService],
   bootstrap: [AppComponent]
