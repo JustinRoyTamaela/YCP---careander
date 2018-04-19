@@ -2,9 +2,9 @@ import { Middagdienst } from './middagdienst';
 
 export const MIDDAGDIENST: Middagdienst[] = [
 	{
-		titel: 'gezkjhgfden',
-		tijd: '10:00 uur',
-		omschrijving: 'Met alle aanwezig clienten een kop koffie drinken in de gemeenschappelijke ruimte'
+		titel: 'Dagbesteding',
+		tijd: '12.00',
+		omschrijving: 'spullen klaar zetten voor clienten die naar de dag besteding gaan.'
 	},
 	{
 		titel: 'taak 2',

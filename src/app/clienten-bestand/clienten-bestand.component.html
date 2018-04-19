@@ -1,53 +1,66 @@
-<div class="container">
+<div class="row">
+			<h2>Clienten bestand</h2>	
+</div>
+
+
 	<div class="row">
-		<div class="col-md-6">
-			<h2>Client gegevens</h2>
-			<div class="card">
-				<div class="card-body">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><input #clientId placeholder="voer iets in"></li>
-						<li class="list-group-item"><input #clientName placeholder="voer iets in"></li>
-						<li class="list-group-item"><input #clientLeeftijd placeholder="voer iets in"></li>
-						<li class="list-group-item"><input #clientImgUrl placeholder="voer iets in"></li>
+			<div class="col-md-12">
+			<a class="btn btn-primary client_toevoegen" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    		Client toevoegen
+  			</a>
 
-  					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<h2>Client kenmerken</h2>
-			<div class="card">
-				<div class="card-body">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><input #clientKenmerk1 placeholder="voer iets in"></li>
-						<li class="list-group-item"><input #clientKenmerk2 placeholder="voer iets in"></li>
-						<li class="list-group-item"><input #clientKenmerk3 placeholder="voer iets in"></li>
-  					</ul>
-  					<a href="#" class="btn btn-primary voegtoe" (click)="addClient(
-                    clientId.value,
-                    clientName.value,  
-                    clientLeeftijd.value, 
-                    clientImgUrl.value, 
-                    clientKenmerk1.value,
-                    clientKenmerk2.value,
-                    clientKenmerk3.value
-                    ); 
+  			<div class="collapse" id="collapseExample">
+  				<div class="row">
+  					<div class="col-md-6">
+  						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Clientnummer:<input #clientId placeholder="voer iets in"></li>
+							<li class="list-group-item ">Naam<input #clientName placeholder="voer iets in"></li>
+							<li class="list-group-item ">Leeftijd<input #clientLeeftijd placeholder="voer iets in"></li>
+							<li class="list-group-item ">Afbeelding<input #clientImgUrl placeholder="voer iets in"></li>
+  						</ul>
+  					</div>
+  					<div class="col-md-6">
+						<div class="card">
+							<div class="card-body kenmerken">
+								<ul class="list-group list-group-flush ">
+									<li class="list-group-item float-right">Kenmerk: <input #clientKenmerk1 placeholder="voer iets in"></li>
+									<li class="list-group-item float-right">Kenmerk: <input #clientKenmerk2 placeholder="voer iets in"></li>
+									<li class="list-group-item float-right">Kenmerk: <input #clientKenmerk3 placeholder="voer iets in"></li>
+									<li class="list-group-item float-right">	
+  									<a href="#" class="btn btn-primary voegtoe" (click)="addClient(
+                    				clientId.value,
+                    				clientName.value,  
+                    				clientLeeftijd.value, 
+                    				clientImgUrl.value, 
+                    				clientKenmerk1.value,
+                    				clientKenmerk2.value,
+                    				clientKenmerk3.value
+                    				); 
 
-                    clientId.value='';
-                    clientName.value='';  
-                    clientLeeftijd.value=''; 
-                    clientImgUrl.value=''; 
-                    clientKenmerk1.value='';
-                    clientKenmerk2.value='';
-                    clientKenmerk3.value=''"> 
-                	Voeg client toe</a>
-				</div>
+                    				clientId.value='';
+                    				clientName.value='';  
+                    				clientLeeftijd.value=''; 
+                    				clientImgUrl.value=''; 
+                    				clientKenmerk1.value='';
+                    				clientKenmerk2.value='';
+                    				clientKenmerk3.value=''"> 
+                					Voeg client toe</a>
+									</li>
+  								</ul>
+							</div>
+						</div>
+					</div>
+  				</div>
 			</div>
+
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-6">
-		<h2>Selecteer een client</h2>	
+		<h4>Onze clienten</h4>	
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
 			<div class="card">
 				<div class="card-body">
 					<ul class="clienten">
@@ -55,7 +68,7 @@
     					[class.selected]="client === selectedClient"
     					(click)="onSelect(client)" class="clientenlijst" >
     						<span class="badge">{{client.id}}</span> {{client.name}}
-    						<a href="#" class="btn btn-danger float-right"
+    						<a href="#" class="btn btn-danger remove float-right"
     						(click)="deleteClient(client.id)"
     						>X</a>
   						</li>
@@ -63,7 +76,7 @@
 				</div>	
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-8">
 			<div *ngIf="selectedClient" class="card">
 				<div class="card-body">
 					<h5 class="card-title">{{ selectedClient.name }}</h5>
@@ -78,7 +91,6 @@
 			</div>
 		</div>
 	</div>
-</div>
 
 
 <!--   <div>

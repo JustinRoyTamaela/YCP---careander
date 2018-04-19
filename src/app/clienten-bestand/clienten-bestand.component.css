@@ -5,6 +5,16 @@
 	padding: 0;
 }	
 
+.client_toevoegen {
+	margin-bottom: 20px;
+}
+.remove {
+	padding: 13px;
+
+}
+.kenmerken {
+	padding-top: 0;
+}
 .clienten {
 	padding-left: 0;
 }

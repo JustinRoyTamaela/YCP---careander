@@ -2,9 +2,9 @@ import { Avonddienst } from './Avonddienst';
 
 export const AVONDDIENST: Avonddienst[] = [
 	{
-		titel: 'klajlkdfjkldfjklef',
-		tijd: '10:00 uur',
-		omschrijving: 'Met alle aanwezig clienten een kop koffie drinken in de gemeenschappelijke ruimte'
+		titel: 'Thee drinken en TV kijken',
+		tijd: '20:00 uur',
+		omschrijving: 'Thee drinken en GTST kijken met de clienten.'
 	},
 	{
 		titel: 'taak 2',
