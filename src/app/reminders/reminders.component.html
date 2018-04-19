@@ -11,16 +11,20 @@
 
 <div class="row">
   <div class="col-md-6">
-    <h2>To do</h2>
+    <h2>Taken</h2>
   </div>
 </div>
 
 
-
 <div class="row">
-  <div class="col-md-5">
+    <div class="col-md-6">
+      <app-vaste-dagtaken></app-vaste-dagtaken>
+    </div>  
+
+
+    <div class="col-md-6">
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    nieuwe to do: 
+    Nieuwe taak toevoegen 
     </a>
 
     <div class="collapse" id="collapseExample">
@@ -55,15 +59,7 @@
           Voeg taak toe</a>
         </div>
     </div>
-  </div>
-</div>
 
-<div class="row">
-    
-
-
-    <div class="col-md-6">
-      <h2>to do's</h2>
       <ul class="reminders">
         <li *ngFor="let reminder of reminders; let i=index" id="listItem">
           <div class="card" [ngClass]="{'checked' : reminder.completed == 'true' }">
@@ -72,10 +68,10 @@
               <span>{{reminder.time}} uur</span>
             </div>
           <div class="card-body">
-            <h5 class="card-title">To do: {{reminder.task}}</h5>
+            <h5 class="card-title">Taak omschrijving: {{reminder.task}}</h5>
             <!-- <div class="col-md-6 col-md-offset-6" id="checkDone"> Complete: <input type="checkbox" [(ngModel)]="reminder.completed"> </div> -->
-            <p class="card-text"><i>{{reminder.client}}</i> {{reminder.info}} {{reminder.time}}</p>
-            <a routerLink="/taken" class="btn btn-primary" (click)="delete(reminder.id)">Remove Reminder</a>
+            <p class="card-text"><i>{{reminder.client}}</i> {{reminder.info}} {{reminder.time}} uur</p>
+            <a routerLink="/taken" class="btn btn-success" (click)="delete(reminder.id)">Taak voltooid</a>
             <!--
               <input [(ngModel)]="reminder.completed" placeholder="name">
               <button (click)="markCompleted(reminder.id, reminder.completed)">Mark as COMPLETED</button>
@@ -84,15 +80,19 @@
           </div>
         </li>
       </ul>
-  </div>
+    </div>
+    
 </div>
 
 
 
-<div class="row">
 
 
-</div>  
+
+
+
+
+
 <!--Add New Reminders-->
 
 
