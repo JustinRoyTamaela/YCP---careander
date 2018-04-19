@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Client } from '../client';
 import { ClientenService } from '../clienten.service';
+import { ReminderService } from '../reminder.service';
+import { RemindersComponent } from '../reminders/reminders.component';
+
+
 
 
 @Component({
@@ -8,6 +12,7 @@ import { ClientenService } from '../clienten.service';
   templateUrl: './clienten-bestand.component.html',
   styleUrls: ['./clienten-bestand.component.css']
 })
+
 export class ClientenBestandComponent implements OnInit {
     
 
@@ -15,7 +20,8 @@ export class ClientenBestandComponent implements OnInit {
 
  	  selectedClient: Client;
 
-  constructor(private clientenService: ClientenService)
+  constructor(private clientenService: ClientenService,
+              private reminderService: ReminderService)
   { }
 
   ngOnInit() {
@@ -48,8 +54,7 @@ export class ClientenBestandComponent implements OnInit {
     this.clients = this.clients.filter(h => h !== id);
     this.clientenService.deleteClient(id).subscribe(
       () => this.getClienten()
-    );
-    
+    );    
   }
 
 
@@ -57,6 +62,16 @@ export class ClientenBestandComponent implements OnInit {
   	this.selectedClient = client;
   }
 
+// @ViewChild('reminder')
+//   private reminder: RemindersComponent;
+
+
+//   filterReminders(name): void {
+//     console.log("in filterReminders" + name)
+//     this.reminder.getFilteredReminders(name);
+//     // this.clientenService.filterReminders(name).subscribe(
+//       // () => this.reminderService.getReminders()
+//   }
 
 
 } //einde export class. blijf hierboven.

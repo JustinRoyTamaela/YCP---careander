@@ -1,6 +1,7 @@
 .container {
 	padding: 15px;
 	background-color: #4d2971;
+	height: 100vh;
 }
 
 
@@ -28,4 +29,12 @@
 .datum, p {
 	font-size: 0.8em;
 	color: #fff;
+}
+
+.kaart {
+	transition: all .2s ease-in-out;
+}
+
+.kaart:hover {
+	transform: scale(1.05);
 }

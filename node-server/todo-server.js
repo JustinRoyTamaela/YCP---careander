@@ -13,7 +13,7 @@ function getConnection() {
   var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: 'mysql',
     database: 'careander'
   });
   return connection;
