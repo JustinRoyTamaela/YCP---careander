@@ -63,13 +63,14 @@
 				</div>	
 			</div>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<div *ngIf="selectedClient" class="card">
 				<div class="card-body">
 					<h5 class="card-title">{{ selectedClient.name }}</h5>
 					<img src="{{selectedClient.imgurl}}" class="card-img-top">
 					<ul class="list-group list-group-flush">
-    					<li class="list-group-item"> {{selectedClient.kenmerk1}} </li>
+    					<li class="list-group-item">Leeftijd: {{selectedClient.leeftijd}} </li>
+    					<li class="list-group-item">Kenmerk: {{selectedClient.kenmerk1}} </li>
     					<li class="list-group-item">{{selectedClient.kenmerk2}}</li>
     					<li class="list-group-item">{{selectedClient.kenmerk3}}</li>
   					</ul>
